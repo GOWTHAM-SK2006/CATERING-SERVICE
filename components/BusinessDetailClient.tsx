@@ -23,6 +23,7 @@ import {
   Building2,
   Clock,
   Info,
+  MessageCircle,
 } from "lucide-react";
 
 export default function BusinessDetailClient({ caterer }: { caterer: Caterer }) {
@@ -145,20 +146,42 @@ export default function BusinessDetailClient({ caterer }: { caterer: Caterer }) 
 
             {/* Quick Actions Panel */}
             <div className="flex flex-row lg:flex-col gap-3 shrink-0">
+              <a
+                href={`https://wa.me/${caterer.whatsappRaw || "918870012756"}?text=${encodeURIComponent(
+                  `Hi ${caterer.name}, I would like to inquire about catering services for my upcoming event.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex-1 lg:flex-none bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl transition shadow-md shadow-emerald-600/30 flex items-center justify-center gap-2"
+              >
+                <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
+                <span>WhatsApp Response</span>
+              </a>
+
               <button
                 onClick={() => setIsQuoteModalOpen(true)}
-                className="flex-1 lg:flex-none bg-accent-600 hover:bg-accent-700 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition shadow-md shadow-accent-600/30 flex items-center justify-center gap-2"
+                className="flex-1 lg:flex-none bg-accent-600 hover:bg-accent-700 text-white font-bold text-xs sm:text-sm px-5 py-3.5 rounded-xl transition shadow-md shadow-accent-600/30 flex items-center justify-center gap-2"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>{t("requestQuote")}</span>
               </button>
+
+              {caterer.phone && (
+                <a
+                  href={`tel:${caterer.phone.replace(/\s+/g, "")}`}
+                  className="flex-1 lg:flex-none bg-brand-50 hover:bg-brand-100 text-brand-800 border border-brand-200 font-semibold text-xs sm:text-sm px-4 py-3 rounded-xl transition flex items-center justify-center gap-2"
+                >
+                  <PhoneCall className="w-4 h-4 text-brand-600" />
+                  <span>Call {caterer.phone}</span>
+                </a>
+              )}
 
               {caterer.googleMapsUrl && (
                 <a
                   href={caterer.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 lg:flex-none bg-brand-50 hover:bg-brand-100 text-brand-800 border border-brand-200 font-semibold text-xs sm:text-sm px-4 py-3 rounded-xl transition flex items-center justify-center gap-2"
+                  className="flex-1 lg:flex-none bg-gray-50 hover:bg-gray-100 text-gray-800 border border-gray-200 font-semibold text-xs sm:text-sm px-4 py-3 rounded-xl transition flex items-center justify-center gap-2"
                 >
                   <MapPin className="w-4 h-4 text-accent-500" />
                   <span>{t("openInGoogleMaps")}</span>
@@ -413,13 +436,27 @@ export default function BusinessDetailClient({ caterer }: { caterer: Caterer }) 
               <p className="text-xs text-brand-200 leading-relaxed">
                 Leave your celebration requirements, expected guest count, and date.
               </p>
-              <button
-                onClick={() => setIsQuoteModalOpen(true)}
-                className="w-full bg-accent-600 hover:bg-accent-500 text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition shadow-lg shadow-accent-600/30 flex items-center justify-center gap-2"
-              >
-                <PhoneCall className="w-4 h-4" />
-                <span>{t("requestQuote")}</span>
-              </button>
+              <div className="space-y-2 pt-1">
+                <a
+                  href={`https://wa.me/${caterer.whatsappRaw || "918870012756"}?text=${encodeURIComponent(
+                    `Hi ${caterer.name}, I would like to inquire about catering services for my upcoming event.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition flex items-center justify-center gap-2 shadow"
+                >
+                  <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
+                  <span>WhatsApp: +91 88700 12756</span>
+                </a>
+
+                <button
+                  onClick={() => setIsQuoteModalOpen(true)}
+                  className="w-full bg-accent-600 hover:bg-accent-500 text-white font-bold text-xs sm:text-sm py-3 rounded-xl transition shadow-lg shadow-accent-600/30 flex items-center justify-center gap-2"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>{t("requestQuote")}</span>
+                </button>
+              </div>
             </div>
 
             {/* Related Caterers in the same city */}

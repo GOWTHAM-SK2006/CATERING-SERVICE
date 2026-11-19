@@ -20,6 +20,8 @@ export interface Caterer {
   isFeatured: boolean;
   isVerified: boolean;
   phone?: string; // Only provided if verified
+  whatsapp?: string;
+  whatsappRaw?: string;
   email?: string;
   website?: string;
   images: string[];
@@ -78,10 +80,13 @@ export const CATERERS_DATA: Caterer[] = [
     isRecentlyAdded: true,
     isFeatured: true,
     isVerified: true,
+    phone: "+91 88700 12756",
+    whatsapp: "+91 88700 12756",
+    whatsappRaw: "918870012756",
     verifiedNote:
-      "Listing details verified via Justdial business directory. Contact information and appointment bookings can be accessed directly on their official Justdial profile.",
+      "Direct verified inquiry hotline & WhatsApp: +91 88700 12756. Listing details and catalog verified via Justdial business directory.",
     verifiedNoteTa:
-      "ஜஸ்ட்டயல் வணிகக் கோப்பகம் மூலம் சரிபார்க்கப்பட்ட தகவல். தொடர்பு விவரங்கள் மற்றும் முன்பதிவுகளை அவர்களின் அதிகாரப்பூர்வ ஜஸ்ட்டயல் பக்கத்தில் நேரடியாகக் காணலாம்.",
+      "நேரடி அதிகாரப்பூர்வ வாட்ஸ்அப் / தொடர்பு எண்: +91 88700 12756. ஜஸ்ட்டயல் மூலம் சரிபார்க்கப்பட்ட வணிகக் குறிப்பு.",
     images: [
       "https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=80",
       "https://images.unsplash.com/photo-1610057099443-fde8c4d50f91?auto=format&fit=crop&w=800&q=80",

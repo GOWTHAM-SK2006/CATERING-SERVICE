@@ -14,6 +14,7 @@ import {
   Layers,
   PhoneCall,
   Search,
+  MessageCircle,
 } from "lucide-react";
 
 export default function Navbar() {
@@ -56,9 +57,19 @@ export default function Navbar() {
           </div>
 
           <div className="flex items-center space-x-4">
+            <a
+              href="https://wa.me/918870012756?text=Hi%20Valam%20Caterers,%20I%20would%20like%20to%20inquire%20about%20catering%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-emerald-300 hover:text-white transition flex items-center gap-1 font-semibold"
+            >
+              <MessageCircle className="w-3.5 h-3.5 text-emerald-400" />
+              <span>WhatsApp: +91 88700 12756</span>
+            </a>
+            <span className="text-brand-700 hidden md:inline">|</span>
             <Link
               href="/caterers?city=Tirupur"
-              className="text-brand-200 hover:text-white transition flex items-center gap-1"
+              className="text-brand-200 hover:text-white transition hidden md:flex items-center gap-1"
             >
               <MapPin className="w-3 h-3 text-accent-400" />
               <span>Tirupur</span>
@@ -192,6 +203,17 @@ export default function Navbar() {
           </div>
 
           <div className="pt-3 border-t border-gray-100 space-y-2">
+            <a
+              href="https://wa.me/918870012756?text=Hi%20Valam%20Caterers,%20I%20would%20like%20to%20inquire%20about%20catering%20services."
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 bg-[#25D366] text-white font-bold py-3 px-4 rounded-lg shadow transition"
+            >
+              <MessageCircle className="w-5 h-5 fill-white text-[#25D366]" />
+              <span>WhatsApp: +91 88700 12756</span>
+            </a>
+
             <Link
               href="/add-listing"
               onClick={() => setMobileMenuOpen(false)}

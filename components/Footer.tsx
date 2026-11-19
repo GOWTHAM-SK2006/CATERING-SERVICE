@@ -11,6 +11,7 @@ import {
   Heart,
   ChevronRight,
   Info,
+  MessageCircle,
 } from "lucide-react";
 import { CITIES_DATA, CATEGORIES_DATA } from "@/data/caterers";
 
@@ -116,6 +117,18 @@ export default function Footer() {
               <p className="text-xs text-gray-400 mt-1">
                 Opposite KVB Bank, P.N. Road, Tirupur, Tamil Nadu.
               </p>
+              <div className="mt-2.5 pt-2 border-t border-gray-700/60 flex items-center justify-between text-xs">
+                <span className="text-gray-400">WhatsApp / Call:</span>
+                <a
+                  href="https://wa.me/918870012756?text=Hi%20Valam%20Caterers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 font-bold flex items-center gap-1"
+                >
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>+91 88700 12756</span>
+                </a>
+              </div>
             </div>
           </div>
 

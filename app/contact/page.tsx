@@ -11,6 +11,8 @@ import {
   ChevronRight,
   HelpCircle,
   ShieldCheck,
+  MessageCircle,
+  Phone,
 } from "lucide-react";
 
 export default function ContactPage() {
@@ -151,6 +153,28 @@ export default function ContactPage() {
 
           {/* Right Column: Directory Info & FAQ */}
           <div className="lg:col-span-5 space-y-6">
+            {/* Instant WhatsApp Card */}
+            <div className="bg-[#25D366]/10 border border-[#25D366]/30 rounded-3xl p-6 shadow-sm space-y-3">
+              <div className="flex items-center gap-2 text-emerald-900 font-bold text-base">
+                <MessageCircle className="w-5 h-5 text-[#25D366] fill-[#25D366]" />
+                <span>Instant WhatsApp Support</span>
+              </div>
+              <p className="text-xs sm:text-sm text-gray-700 leading-relaxed">
+                Connect directly on WhatsApp for immediate catering inquiries, date checks, and menu quotations:
+              </p>
+              <div className="pt-1">
+                <a
+                  href="https://wa.me/918870012756?text=Hi%20Valam%20Caterers,%20I%20would%20like%20to%20inquire%20about%20catering%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm py-3 px-4 rounded-xl transition flex items-center justify-center gap-2 shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
+                  <span>Chat on WhatsApp: +91 88700 12756</span>
+                </a>
+              </div>
+            </div>
+
             <div className="bg-white rounded-3xl border border-gray-200/90 shadow-sm p-6 space-y-4">
               <h3 className="font-bold text-gray-900 text-base border-b border-gray-100 pb-2">
                 Directory Hub Locations

@@ -27,6 +27,7 @@ import {
   Heart,
   ChevronRight,
   ExternalLink,
+  MessageCircle,
 } from "lucide-react";
 
 export default function HomePage() {
@@ -170,9 +171,19 @@ export default function HomePage() {
                 </div>
 
                 <div className="pt-4 flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://wa.me/918870012756?text=Hi%20Valam%20Caterers,%20I%20would%20like%20to%20inquire%20about%20catering%20services%20for%20my%20event."
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold text-sm px-5 py-3 rounded-xl transition shadow-lg shadow-emerald-950/40 flex items-center gap-2"
+                  >
+                    <MessageCircle className="w-4 h-4 fill-white text-[#25D366]" />
+                    <span>WhatsApp Response (+91 88700 12756)</span>
+                  </a>
+
                   <Link
                     href={`/caterers/${valamCaterers.slug}`}
-                    className="bg-accent-600 hover:bg-accent-500 text-white font-bold text-sm px-6 py-3 rounded-xl transition shadow-lg shadow-accent-600/30 flex items-center gap-2"
+                    className="bg-accent-600 hover:bg-accent-500 text-white font-bold text-sm px-5 py-3 rounded-xl transition shadow-lg shadow-accent-600/30 flex items-center gap-2"
                   >
                     <span>{t("viewDetails")}</span>
                     <ArrowRight className="w-4 h-4" />
