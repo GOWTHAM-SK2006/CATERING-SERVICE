@@ -1,0 +1,17 @@
+{
+  "name": "Valam Food Directory - Catering Services Near You",
+  "short_name": "Valam Directory",
+  "description": "Discover trusted catering services for weddings, parties and special occasions in Tamil Nadu.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#15803d",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+
